@@ -1,0 +1,9 @@
+STATISTICS RESULTS 
+Number of A bases: 16
+Number of T bases: 17
+Number of C bases: 21
+Number of G bases: 26
+Number of reads with at least one low complexity sequence: 3
+Number of reads with GC couples higher than the threshold 1: 2
+Read ID: read_1, number of GC couples: 2
+Read ID: read_4, number of GC couples: 2
