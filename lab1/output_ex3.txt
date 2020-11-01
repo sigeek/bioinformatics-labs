@@ -1,4 +1,0 @@
-COMPARISON RESULTS 
-read_1---read_6
-read_3---read_8
-read_5---read_10
