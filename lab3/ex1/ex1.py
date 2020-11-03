@@ -9,24 +9,28 @@ Author: Silvia Giammarinaro
 # python ex1.py sort_results.vcf
 
 import sys 
-import pandas as pd
+import re
 
 if __name__ == "__main__":
+    complete_SNP_rows = []
+    INDEL_rows = []
     input_file = sys.argv[1]
     with open(input_file, 'r') as lines:
         for i, line in enumerate(lines):
             if line.startswith('##'):
                 continue
             elif line.startswith('#'):
-                header = line.split("\t")
+                continue
             else:
-                dataframe = pd.read_csv(lines, sep="\t+", names=header)
-                #print(dataframe.head())
+                columns = line.split("\t")
+                ALT = columns[4]
+                INFO = columns[7]
+                pattern = re.compile("^[ACGT].")
+                if pattern.match(ALT):
+                    complete_SNP_rows.append(line)
+                    if "INDEL" in INFO:
+                        INDEL_rows.append(line)
 
-    complete_SNP_rows = dataframe.loc[dataframe["ALT"].str.match("^[ACGT].")]
-    print("First 5 complete SNP rows")
-    print(complete_SNP_rows.head())
 
-    INDEL_rows = complete_SNP_rows.loc[complete_SNP_rows["INFO"].str.match("INDEL")]
-    print("First 5 INDEL rows")
-    print(INDEL_rows.head())
+    #print(complete_SNP_rows)
+    #print(INDEL_rows)
