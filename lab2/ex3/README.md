@@ -1,5 +1,5 @@
 # Exercise 3: Run BWA
-Perform the Barrow Willow Alignment on real human data. We will use only two chromosomes, downloadable from here: 
+Perform the Burrow Wheeler Alignment on real human data. We will use only two chromosomes, downloadable from here: 
 * chr 10: [`ftp://ftp.ensembl.org/pub/release-92/fasta/homo_sapiens/dna/Homo_sapiens.GRCh38.dna.chromosome.10.fa.gz`](ftp://ftp.ensembl.org/pub/release-92/fasta/homo_sapiens/dna/Homo_sapiens.GRCh38.dna.chromosome.10.fa.gz)
 * chr 18: [`ftp://ftp.ensembl.org/pub/release-92/fasta/homo_sapiens/dna/Homo_sapiens.GRCh38.dna.chromosome.18.fa.gz`](ftp://ftp.ensembl.org/pub/release-92/fasta/homo_sapiens/dna/Homo_sapiens.GRCh38.dna.chromosome.18.fa.gz)
 * After the downloads, we unzip and concatenate them. The concatenation will be our reference genome.
